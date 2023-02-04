@@ -1,0 +1,87 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px #0ca6787e;
+}
+
+html {
+  overflow-x: hidden;
+  font-size: 62.5%;
+  font-family: monospace;
+}
+
+.chat-info {
+  width: 100%;
+  text-align: center;
+  padding: 2.4rem 0;
+  position: sticky;
+  top: 0;
+}
+
+.chatbox {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  padding: 2.4rem;
+  gap: 2rem;
+  align-items: center;
+}
+
+.message-box {
+  width: 100%;
+  padding: 1.2rem 2.4rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.send-btn {
+  padding: 1.2rem 2.4rem;
+  background-color: #0ca678;
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.chat {
+  width: 100%;
+  list-style: none;
+  padding: 0 4.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.message {
+  display: inline-block;
+  padding: 1.2rem 3.6rem;
+  font-size: 1.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+  max-width: 50%;
+  border-radius: 8px;
+}
+
+.message-sender {
+  align-self: flex-end;
+  background-color: #0ca678;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .message {
+    width: 100%;
+  }
+}
+
+.message-username {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  font-weight: bold;
+}
