@@ -25,6 +25,15 @@ socket.on("user joined", (data) => {
   onlineChatters.textContent = data.users;
 });
 
+socket.on("joined message", (username) => {
+  chat.insertAdjacentHTML(
+    "beforeend",
+    `
+  <li class="message"><b><p>${username} joined</p></b><li>
+  `
+  );
+});
+
 socket.on("user left", (data) => {
   onlineChatters.textContent = data.users;
 });
@@ -33,7 +42,7 @@ socket.on("new message", (data) => {
   chat.insertAdjacentHTML(
     "beforeend",
     ` <li class="message">
-        <p class="message-username">${data.username}</p>
+        <p class="message-username" style="color: ${data.usernameColor};">${data.username}</p>
         :
         <p class="message-text">${data.message}</p>
       </li>`
@@ -47,6 +56,8 @@ chatForm.addEventListener("submit", function (event) {
     username,
     usernameColor,
   });
+
+  messageInput.value = "";
 });
 
 usernameModal.addEventListener("submit", function (event) {
@@ -55,4 +66,5 @@ usernameModal.addEventListener("submit", function (event) {
 
   username = usernameInput.value;
   usernameModal.style.display = "none";
+  socket.emit("joined message", username);
 });

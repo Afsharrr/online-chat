@@ -30,4 +30,8 @@ io.on("connection", (socket) => {
   socket.on("new message", (data) => {
     io.emit("new message", data);
   });
+
+  socket.on("joined message", (username) => {
+    socket.broadcast.emit("joined message", username);
+  });
 });
