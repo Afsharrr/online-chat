@@ -8,28 +8,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <form action="" class="username-modal">
+      <p>Enter your username:</p>
+      <input type="text" class="input input__username" />
+      <button class="btn btn__username" type="submit">Submit</button>
+    </form>
     <header class="chat-info">
       <h1 class="chatters">
         Online Chatters: <span class="online-chatters">0</span>
       </h1>
     </header>
     <main>
-      <ul class="chat">
-        <li class="message">
-          <p class="message-username">Ali</p>
-          :
-          <p class="message-text">Salam</p>
-        </li>
-
-        <li class="message">
-          <p class="message-username">Cumyar</p>
-          :
-          <p class="message-text">slm asl</p>
-        </li>
-      </ul>
-      <form class="chatbox">
-        <input type="text" class="message-box" />
-        <button type="submit" class="send-btn">Send</button>
+      <ul class="chat"></ul>
+      <form class="chatbox" action="">
+        <input type="text" class="input input__message" />
+        <button type="submit" class="btn btn__send-message">Send</button>
       </form>
     </main>
     <script src="/socket.io/socket.io.js"></script>
